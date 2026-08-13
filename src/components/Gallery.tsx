@@ -11,7 +11,9 @@ const projects = [
   { title: 'Circadia', image: '/portfolio-13.jpeg' },
   { title: 'Glory Street', image: '/gallery-2.jpeg' },
   { title: 'East Point', image: '/gallery-3.jpeg' },
-  { title: 'BCFC 2025', image: '/gallery-4.jpeg' }
+  { title: 'BCFC 2025', image: '/gallery-4.jpeg' },
+  { title: 'STYLE ICON OF THE YEAR 2023', image: '/gallery-4.jpeg' },
+  { title: 'BCFC 2025', image: '/gallery-4.jpeg' },
 ];
 
 export default function Gallery() {
@@ -39,9 +41,9 @@ export default function Gallery() {
     // Grid items reveal
     gridRefs.current.forEach((el, index) => {
       if (!el) return;
-      
+
       const img = el.querySelector('img');
-      
+
       // Reveal container left-to-right
       gsap.fromTo(el,
         { clipPath: 'inset(0 100% 0 0)' },
@@ -55,7 +57,7 @@ export default function Gallery() {
           }
         }
       );
-      
+
       // Scale image down slightly while container reveals
       if (img) {
         gsap.fromTo(img,
@@ -89,7 +91,7 @@ export default function Gallery() {
           <div
             key={index}
             onClick={() => setSelectedImage(project.image)}
-            ref={el => { gridRefs.current[index] = el; }} 
+            ref={el => { gridRefs.current[index] = el; }}
             className="relative w-full aspect-[4/5] overflow-hidden bg-zinc-900 group block cursor-pointer"
             data-cursor="hover" data-cursor-text="VIEW"
             style={{ clipPath: 'inset(0 100% 0 0)' }}
@@ -102,7 +104,7 @@ export default function Gallery() {
             />
             {/* Dark gradient overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-            
+
             <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
               <h3 className="text-3xl md:text-5xl font-serif text-white tracking-wide">{project.title}</h3>
               <div className="w-0 h-[2px] bg-white mt-2 group-hover:w-16 transition-all duration-500 ease-out"></div>
@@ -113,7 +115,7 @@ export default function Gallery() {
 
       {/* Fullscreen Lightbox Overlay */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm cursor-pointer p-4 md:p-12"
           onClick={() => setSelectedImage(null)}
           data-cursor="hover"

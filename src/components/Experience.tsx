@@ -107,10 +107,8 @@ export default function Experience() {
         </Link>
 
         {/* Project Meta Info */}
-        <div className="flex justify-between items-center py-6 border-b border-zinc-800 text-xs md:text-sm font-sans tracking-widest uppercase text-zinc-400">
-          <span>KISHORE N.</span>
-          <span>PORTFOLIO</span>
-          <span>CONTACT</span>
+        <div className="flex justify-end items-center py-6 border-b border-zinc-800 text-xs md:text-sm font-sans tracking-widest uppercase text-zinc-400">
+          <a href="#contact" className="hover:text-white transition-colors">CONTACT</a>
         </div>
       </div>
     </section>

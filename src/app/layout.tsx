@@ -15,8 +15,61 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kishore Nayak | Creative Director & Fashion Choreographer",
-  description: "Multidisciplinary creative professional specializing in choreography, fashion performance training, and creative show direction.",
+  metadataBase: new URL("https://kishorenayak.in.net"),
+  title: {
+    default: "Kishore Nayak | Creative Director & Fashion Choreographer",
+    template: "%s | Kishore Nayak",
+  },
+  description: "Official website of Kishore Nayak — Creative Director, Fashion Choreographer, and Performance Coach specializing in fashion show direction and runway performance.",
+  keywords: [
+    "Kishore Nayak",
+    "Kishore Nayak Portfolio",
+    "Kishore Nayak Creative Director",
+    "Kishore Nayak Fashion Choreographer",
+    "Kishore Nayak Official Website",
+    "Fashion Choreographer India",
+    "Creative Director Portfolio",
+    "Fashion Show Director"
+  ],
+  authors: [{ name: "Kishore Nayak", url: "https://kishorenayak.in.net" }],
+  creator: "Kishore Nayak",
+  publisher: "Kishore Nayak",
+  alternates: {
+    canonical: "https://kishorenayak.in.net",
+  },
+  openGraph: {
+    title: "Kishore Nayak | Creative Director & Fashion Choreographer",
+    description: "Official website of Kishore Nayak — Creative Director, Fashion Choreographer, and Performance Coach.",
+    url: "https://kishorenayak.in.net",
+    siteName: "Kishore Nayak",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/hero-image.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Kishore Nayak Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kishore Nayak | Creative Director & Fashion Choreographer",
+    description: "Official website of Kishore Nayak — Creative Director & Fashion Choreographer.",
+    images: ["/hero-image.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -24,11 +77,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kishore Nayak",
+    "url": "https://kishorenayak.in.net",
+    "image": "https://kishorenayak.in.net/hero-image.jpeg",
+    "jobTitle": "Creative Director & Fashion Choreographer",
+    "description": "Multidisciplinary creative professional specializing in choreography, fashion performance training, and creative show direction.",
+    "sameAs": [
+      "https://kishorenayak.in.net"
+    ]
+  };
+
   return (
     <html
       lang="en"
       className={`${cormorant.variable} ${inter.variable} antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="bg-black text-white selection:bg-gold/30 selection:text-gold flex flex-col min-h-screen">
         <SmoothScrolling>
           {children}
