@@ -70,6 +70,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "AkVm581xmMAcJkruCB9k_2ASc993pMhcP_6afBV8AgQ",
+  },
 };
 
 export default function RootLayout({
@@ -96,6 +99,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} antialiased`}
     >
       <head>
+        <meta name="google-site-verification" content="AkVm581xmMAcJkruCB9k_2ASc993pMhcP_6afBV8AgQ" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
