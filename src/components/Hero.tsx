@@ -91,7 +91,7 @@ export default function Hero() {
             </a>
           </MagneticButton>
           <p className="text-gold uppercase tracking-[0.25em] text-xs md:text-sm font-medium">
-            AI TRAINER X FITNESS COACH
+            AI TRAINER X FITNESS MODEL
           </p>
         </div>
       </div>

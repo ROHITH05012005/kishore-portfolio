@@ -71,9 +71,12 @@ export default function About() {
       {/* Huge Typography Intro */}
       <div className="w-full max-w-6xl mb-20 md:mb-32">
         <h2 className="text-4xl md:text-6xl lg:text-[7vw] font-serif uppercase tracking-tight leading-[1.1]">
-          <StaggerText text="I AM KISHORE NAYAK. I AM A FASHION CHOREOGRAPHER, RUNWAY COACH, AND AI TRAINER." trigger="#about" />
+          <StaggerText text="I AM KISHORE NAYAK. I AM A FASHION CHOREOGRAPHER, RUNWAY COACH, AND" trigger="#about" />{' '}
+          <StaggerText text="AI TRAINER." trigger="#about" className="text-gold italic" />
         </h2>
       </div>
+
+
 
       {/* Two Column Layout */}
       <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-12 md:gap-24 justify-between items-start">

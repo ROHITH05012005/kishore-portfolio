@@ -10,10 +10,12 @@ const images = [
   {
     src: '/tilted-image.jpeg',
     alt: 'Featured Show - Runway & Models',
+    aspect: 'aspect-[1563/1006]',
   },
   {
-    src: '/publicjudge-feature.jpeg.png',
+    src: '/judge-feature.jpeg',
     alt: 'Kishore Nayak - Judge & Model',
+    aspect: 'aspect-[1280/885]',
   },
 ];
 
@@ -47,20 +49,21 @@ export default function FeaturedImage() {
   }, []);
 
   return (
-    <section className="bg-black py-16 md:py-28 overflow-hidden flex flex-col gap-12 md:gap-20 justify-center items-center">
+    <section className="bg-black py-16 md:py-28 overflow-hidden flex flex-col gap-12 md:gap-20 justify-center items-center px-4 md:px-8">
       {images.map((img, index) => (
         <div
           key={index}
           ref={(el) => {
             containerRefs.current[index] = el;
           }}
-          className="relative w-[95%] md:w-[90%] aspect-[16/9] md:aspect-[21/9] bg-zinc-900 overflow-hidden shadow-2xl"
+          className={`relative w-full max-w-6xl ${img.aspect} bg-zinc-950 overflow-hidden shadow-2xl rounded-sm`}
         >
           <Image
             src={img.src}
             alt={img.alt}
             fill
-            className="object-cover grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="object-contain grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
             priority={index === 0}
           />
         </div>
