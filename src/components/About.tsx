@@ -13,7 +13,7 @@ export default function About() {
   const rightContentRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  
+
   useEffect(() => {
     // We removed manual GSAP for the heading since StaggerText handles its own ScrollTrigger
 
@@ -50,7 +50,7 @@ export default function About() {
           }
         }
       );
-      
+
       gsap.fromTo(imageRef.current,
         { scale: 1.3 },
         {
@@ -71,15 +71,15 @@ export default function About() {
       {/* Huge Typography Intro */}
       <div className="w-full max-w-6xl mb-20 md:mb-32">
         <h2 className="text-4xl md:text-6xl lg:text-[7vw] font-serif uppercase tracking-tight leading-[1.1]">
-          <StaggerText text="I AM KISHORE NAYAK. I AM A FASHION CHOREOGRAPHER, RUNWAY COACH, AND CREATIVE DIRECTOR." trigger="#about" />
+          <StaggerText text="I AM KISHORE NAYAK. I AM A FASHION CHOREOGRAPHER, RUNWAY COACH, AND AI TRAINER." trigger="#about" />
         </h2>
       </div>
 
       {/* Two Column Layout */}
       <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-12 md:gap-24 justify-between items-start">
-        
+
         {/* Left Side: Text Section */}
-        <div 
+        <div
           ref={rightContentRef}
           className="w-full md:w-1/2 flex flex-col justify-start text-left gap-6 md:gap-8"
         >
@@ -95,22 +95,22 @@ export default function About() {
           <p className="text-base md:text-lg lg:text-xl font-sans font-light leading-relaxed text-zinc-300 text-justify">
             My mission is to elevate the standard of fashion choreography and empower models to truly own their space in the spotlight.
           </p>
-          
+
           <div className="mt-4 md:mt-8">
             <MagneticButton>
-              <a 
-                href="/Kishor_Nayak_Portfolio.pdf" 
-                target="_blank" 
+              <a
+                href="/Kishor_Nayak_Portfolio.pdf"
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                <div 
+                <div
                   data-cursor="hover"
                   className="group flex items-center justify-center gap-4 px-6 py-3 md:px-8 md:py-4 border border-zinc-500 rounded-full text-xs md:text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300 w-fit cursor-pointer"
                 >
                   <span>View CV</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-70 group-hover:opacity-100 transition-opacity">
-                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
                   </svg>
                 </div>
               </a>
@@ -120,12 +120,12 @@ export default function About() {
 
         {/* Right Side: Image Section */}
         <div ref={imageWrapperRef} className="w-full md:w-1/2 relative min-h-[400px] h-full flex-grow bg-zinc-900 overflow-hidden" style={{ clipPath: 'inset(100% 0 0 0)' }}>
-          <Image 
+          <Image
             ref={imageRef}
-            src="/about-image-v3.jpeg" 
-            alt="Kishore Nayak" 
-            fill 
-            className="object-cover grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700" 
+            src="/about-image-v3.jpeg"
+            alt="Kishore Nayak"
+            fill
+            className="object-cover grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
           />
         </div>
 

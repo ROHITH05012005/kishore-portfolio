@@ -8,12 +8,11 @@ import { useState } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: 'Circadia', image: '/portfolio-13.jpeg' },
+  { title: 'STYLE ICON OF THE YEAR 2023', image: '/gallery-4.jpeg' },
   { title: 'Glory Street', image: '/gallery-2.jpeg' },
   { title: 'East Point', image: '/gallery-3.jpeg' },
   { title: 'BCFC 2025', image: '/gallery-4.jpeg' },
-  { title: 'STYLE ICON OF THE YEAR 2023', image: '/gallery-4.jpeg' },
-  { title: 'BCFC 2025', image: '/gallery-4.jpeg' },
+  { title: 'Circadia', image: '/portfolio-13.jpeg' }
 ];
 
 export default function Gallery() {
