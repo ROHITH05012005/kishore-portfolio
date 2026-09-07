@@ -14,6 +14,7 @@ export default function Hero() {
   const title1Ref = useRef<HTMLHeadingElement>(null);
   const title2Ref = useRef<HTMLHeadingElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
+  const xRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     // Reveal animation (syncs after preloader roughly, or could use context, but delay works for now)
@@ -40,6 +41,23 @@ export default function Hero() {
         scrub: true,
       }
     });
+
+    // Subtle continuous rotation & pulse on the X
+    if (xRef.current) {
+      gsap.to(xRef.current, {
+        rotation: 360,
+        repeat: -1,
+        duration: 8,
+        ease: 'none',
+      });
+      gsap.to(xRef.current, {
+        scale: 1.25,
+        repeat: -1,
+        yoyo: true,
+        duration: 1.5,
+        ease: 'sine.inOut',
+      });
+    }
 
   }, []);
 
@@ -90,9 +108,20 @@ export default function Hero() {
               </div>
             </a>
           </MagneticButton>
-          <p className="text-gold uppercase tracking-[0.25em] text-xs md:text-sm font-medium">
-            AI TRAINER X FITNESS MODEL
-          </p>
+          <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 md:gap-5 flex-wrap">
+            <span className="text-sm sm:text-base md:text-xl lg:text-2xl font-semibold tracking-[0.25em] md:tracking-[0.35em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#FFE899] via-[#E5C158] to-[#D4AF37] drop-shadow-[0_2px_12px_rgba(212,175,55,0.4)]">
+              AI TRAINER
+            </span>
+            <span
+              ref={xRef}
+              className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full border border-yellow-400/60 bg-yellow-400/15 text-yellow-300 text-xs sm:text-sm md:text-base font-bold shadow-[0_0_18px_rgba(250,204,21,0.6)] select-none"
+            >
+              ✕
+            </span>
+            <span className="text-sm sm:text-base md:text-xl lg:text-2xl font-semibold tracking-[0.25em] md:tracking-[0.35em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#E5C158] to-[#FFE899] drop-shadow-[0_2px_12px_rgba(212,175,55,0.4)]">
+              FITNESS MODEL
+            </span>
+          </div>
         </div>
       </div>
     </section>
