@@ -19,15 +19,15 @@ export default function Hero() {
     // Reveal animation (syncs after preloader roughly, or could use context, but delay works for now)
     const tl = gsap.timeline({ delay: 3.5 }); // Preloader takes ~3s
 
-    tl.fromTo(imageRef.current, 
+    tl.fromTo(imageRef.current,
       { scale: 1.2, filter: 'brightness(0)' },
       { scale: 1, filter: 'brightness(0.6)', duration: 2, ease: 'power3.out' }
     )
-    .fromTo(buttonsRef.current,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-      "-=0.6"
-    );
+      .fromTo(buttonsRef.current,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
+        "-=0.6"
+      );
 
     // Parallax on scroll
     gsap.to(imageRef.current, {
@@ -69,9 +69,9 @@ export default function Hero() {
           </h1>
         </div>
 
-        <div ref={buttonsRef} className="mt-12 flex gap-6 opacity-0">
+        <div ref={buttonsRef} className="mt-12 flex flex-col items-center gap-4 opacity-0">
           <MagneticButton>
-            <a 
+            <a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
@@ -85,11 +85,14 @@ export default function Hero() {
               </span>
               <div className="relative z-10 w-8 h-8 bg-black rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-300">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
             </a>
           </MagneticButton>
+          <p className="text-gold uppercase tracking-[0.25em] text-xs md:text-sm font-medium">
+            AI TRAINER X FITNESS COACH
+          </p>
         </div>
       </div>
     </section>
